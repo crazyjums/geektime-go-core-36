@@ -1,6 +1,6 @@
 # 35 | 并发安全字典sync.Map (下)
 
-<figure><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 你好，我是郝林，今天我们继续来分享并发安全字典 sync.Map 的内容。
 

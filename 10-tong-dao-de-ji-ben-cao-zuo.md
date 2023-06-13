@@ -1,6 +1,6 @@
 # 10 | 通道的基本操作
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 【Go 语言代码较多，建议配合文章收听音频。】
 

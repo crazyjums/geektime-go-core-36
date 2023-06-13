@@ -1,6 +1,6 @@
 # 46 | 访问网络服务
 
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 你真的很棒，已经跟着我一起从最开始初识 Go 语言，一步一步地走到了这里。
 

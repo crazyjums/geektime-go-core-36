@@ -1,6 +1,6 @@
 # 05 | 程序实体的那些事儿（中）
 
-<figure><img src=".gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 #### 【Go 语言代码较多，建议配合文章收听音频。】
 

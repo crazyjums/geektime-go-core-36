@@ -1,6 +1,6 @@
 # 30 | 原子操作（下）
 
-<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/30.原子操作（下）.mp3" %}
 

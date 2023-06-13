@@ -36,23 +36,23 @@
 
 下面我们就通过一道题来了解一下。**我们今天的问题就是：怎样正确估算切片的长度和容量？**
 
-为此，我编写了一个简单的命令源码文件 demo15.go。
+为此，我编写了一个简单的命令源码文件 [demo15.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article7/q1/demo15.go)。
 
-```
+```go
 package main
 
 import "fmt"
 
 func main() {
-// 示例 1。
-s1 := make([]int, 5)
-fmt.Printf("The length of s1: %d\n", len(s1))
-fmt.Printf("The capacity of s1: %d\n", cap(s1))
-fmt.Printf("The value of s1: %d\n", s1)
-s2 := make([]int, 5, 8)
-fmt.Printf("The length of s2: %d\n", len(s2))
-fmt.Printf("The capacity of s2: %d\n", cap(s2))
-fmt.Printf("The value of s2: %d\n", s2)
+    // 示例 1。
+    s1 := make([]int, 5)
+    fmt.Printf("The length of s1: %d\n", len(s1))
+    fmt.Printf("The capacity of s1: %d\n", cap(s1))
+    fmt.Printf("The value of s1: %d\n", s1)
+    s2 := make([]int, 5, 8)
+    fmt.Printf("The length of s2: %d\n", len(s2))
+    fmt.Printf("The capacity of s2: %d\n", cap(s2))
+    fmt.Printf("The value of s2: %d\n", s2)
 }
 ```
 
@@ -84,7 +84,7 @@ fmt.Printf("The value of s2: %d\n", s2)
 
 但是当我们通过切片表达式基于某个数组或切片生成新切片的时候，情况就变得复杂起来了。我们再来看一个例子：
 
-```
+```go
 s3 := []int{1, 2, 3, 4, 5, 6, 7, 8}
 s4 := s3[3:6]
 fmt.Printf("The length of s4: %d\n", len(s4))
@@ -118,7 +118,7 @@ fmt.Printf("The value of s4: %d\n", s4)
 
 另外，如果我们一次追加的元素过多，以至于使新长度比原容量的 2 倍还要大，那么新容量就会以新长度为基准。注意，与前面那种情况一样，最终的新容量在很多时候都要比新容量基准更大一些。更多细节可参见`runtime`包中 slice.go 文件里的`growslice`及相关函数的具体实现。
 
-我把展示上述扩容策略的一些例子都放到了 demo16.go 文件中。你可以去试运行看看。
+我把展示上述扩容策略的一些例子都放到了 [demo16.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article7/q2/demo16.go) 文件中。你可以去试运行看看。
 
 **2. 问题：切片的底层数组什么时候会被替换？**
 

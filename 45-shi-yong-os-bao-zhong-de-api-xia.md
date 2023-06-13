@@ -1,6 +1,6 @@
 # 45 | 使用os包中的API （下）
 
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 你好，我是郝林，今天我们继续分享使用 os 包中的 API。
 
