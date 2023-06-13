@@ -1,6 +1,6 @@
 # 39 | bytes包与字节串操作（下）
 
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 你好，我是郝林，今天我们继续分享 bytes 包与字节串操作的相关内容。
 

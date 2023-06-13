@@ -175,4 +175,4 @@ fmt.Println("Exit function main.")
 
 [戳此查看 Go 语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang\_Puzzlers)
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>

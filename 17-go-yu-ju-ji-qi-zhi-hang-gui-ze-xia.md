@@ -1,6 +1,6 @@
 # 17 | go语句及其执行规则（下）
 
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/17.go语句及其执行规则（下）.mp3" %}
 

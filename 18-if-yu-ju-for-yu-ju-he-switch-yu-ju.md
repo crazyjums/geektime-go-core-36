@@ -156,17 +156,16 @@ case 4, 5, 6:
 
 我在上一个问题的阐述中还重点表达了一点，不知你注意到了没有，那就是：`switch`语句在`case`子句的选择上是具有唯一性的。正因为如此，`switch`语句不允许`case`表达式中的子表达式结果值存在相等的情况，不论这些结果值相等的子表达式，是否存在于不同的`case`表达式中，都会是这样的结果。具体请看这段代码：
 
-```
-value3 := [...]int8{0, 1, 2, 3, 4, 5, 6}
+<pre class="language-go"><code class="lang-go">value3 := [...]int8{0, 1, 2, 3, 4, 5, 6}
 switch value3[4] {
 case 0, 1, 2:
-fmt.Println("0 or 1 or 2")
+    fmt.Println("0 or 1 or 2")
 case 2, 3, 4:
-fmt.Println("2 or 3 or 4")
-case 4, 5, 6:
-fmt.Println("4 or 5 or 6")
+<strong>    fmt.Println("2 or 3 or 4")
+</strong>case 4, 5, 6:
+    fmt.Println("4 or 5 or 6")
 }
-```
+</code></pre>
 
 变量`value3`的值同`value1`，依然是由从`0`到`6`的 7 个整数组成的数组，元素类型是`int8`。`switch`表达式是`value3[4]`，三个`case`表达式分别是`case 0, 1, 2`、`case 2, 3, 4`和`case 4, 5, 6`。
 
@@ -174,17 +173,16 @@ fmt.Println("4 or 5 or 6")
 
 比如，子表达式`1+1`和`2`不能同时出现，`1+3`和`4`也不能同时出现。有了这个约束的约束，我们就可以想办法绕过这个对子表达式的限制了。再看一段代码：
 
-```
-value5 := [...]int8{0, 1, 2, 3, 4, 5, 6}
+<pre class="language-go"><code class="lang-go">value5 := [...]int8{0, 1, 2, 3, 4, 5, 6}
 switch value5[4] {
 case value5[0], value5[1], value5[2]:
-fmt.Println("0 or 1 or 2")
-case value5[2], value5[3], value5[4]:
-fmt.Println("2 or 3 or 4")
+<strong>    fmt.Println("0 or 1 or 2")
+</strong>case value5[2], value5[3], value5[4]:
+    fmt.Println("2 or 3 or 4")
 case value5[4], value5[5], value5[6]:
-fmt.Println("4 or 5 or26")
-}
-```
+<strong>    fmt.Println("4 or 5 or26")
+</strong>}
+</code></pre>
 
 变量名换成了`value5`，但这不是重点。重点是，我把`case`表达式中的常量都换成了诸如`value5[0]`这样的索引表达式。
 
@@ -192,15 +190,15 @@ fmt.Println("4 or 5 or26")
 
 不过，这种绕过方式对用于类型判断的`switch`语句（以下简称为类型`switch`语句）就无效了。因为类型`switch`语句中的`case`表达式的子表达式，都必须直接由类型字面量表示，而无法通过间接的方式表示。代码如下：
 
-```
+```go
 value6 := interface{}(byte(127))
 switch t := value6.(type) {
 case uint8, uint16:
-fmt.Println("uint8 or uint16")
+    fmt.Println("uint8 or uint16")
 case byte:
-fmt.Printf("byte")
+    fmt.Printf("byte")
 default:
-fmt.Printf("unsupported type: %T", t)
+    fmt.Printf("unsupported type: %T", t)
 }
 ```
 
