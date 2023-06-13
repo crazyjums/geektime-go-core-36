@@ -1,6 +1,6 @@
 # 47 | 基于HTTP协议的网络服务
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 我们在上一篇文章中简单地讨论了网络编程和 socket，并由此提及了 Go 语言标准库中的`syscall`代码包和`net`代码包。
 

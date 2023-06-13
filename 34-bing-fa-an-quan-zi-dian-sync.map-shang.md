@@ -1,6 +1,6 @@
 # 34 | 并发安全字典sync.Map （上）
 
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 在前面，我几乎已经把 Go 语言自带的同步工具全盘托出了。你是否已经听懂了会用了呢？无论怎样，我都希望你能够多多练习、多多使用。它们和 Go 语言独有的并发编程方式并不冲突，相反，配合起来使用，绝对能达到“一加一大于二”的效果。
 

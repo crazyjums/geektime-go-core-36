@@ -1,6 +1,6 @@
 # 37 | strings包与字符串操作
 
-<figure><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 在上一篇文章中，我介绍了 Go 语言与 Unicode 编码规范、UTF-8 编码格式的渊源及运用。Go 语言不但拥有可以独立代表 Unicode 字符的类型`rune`，而且还有可以对字符串值进行 Unicode 字符拆分的`for`语句。
 

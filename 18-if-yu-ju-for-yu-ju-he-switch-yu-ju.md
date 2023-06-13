@@ -14,14 +14,14 @@
 
 那么，**今天的问题是：使用携带`range`子句的`for`语句时需要注意哪些细节？** 这是一个比较笼统的问题。我还是通过编程题来讲解吧。
 
-本问题中的代码都被放在了命令源码文件 demo41.go 的`main`函数中的。为了专注问题本身，本篇文章中展示的编程题会省略掉一部分代码包声明语句、代码包导入语句和`main`函数本身的声明部分。
+本问题中的代码都被放在了命令源码文件 [demo41.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article17/q1/demo41.go) 的`main`函数中的。为了专注问题本身，本篇文章中展示的编程题会省略掉一部分代码包声明语句、代码包导入语句和`main`函数本身的声明部分。
 
-```
+```go
 numbers1 := []int{1, 2, 3, 4, 5, 6}
 for i := range numbers1 {
-if i == 3 {
-numbers1[i] |= i
-}
+    if i == 3 {
+        numbers1[i] |= i
+    }
 }
 fmt.Println(numbers1)
 ```
@@ -50,18 +50,17 @@ fmt.Println(numbers1)
 
 现在，我稍稍修改一下上面的代码。我们再来估算一下打印内容。
 
-```
-numbers2 := [...]int{1, 2, 3, 4, 5, 6}
+<pre class="language-go"><code class="lang-go">numbers2 := [...]int{1, 2, 3, 4, 5, 6}
 maxIndex2 := len(numbers2) - 1
 for i, e := range numbers2 {
-if i == maxIndex2 {
-numbers2[0] += e
-} else {
-numbers2[i+1] += e
-}
+    if i == maxIndex2 {
+        numbers2[0] += e
+<strong>    } else {
+</strong>        numbers2[i+1] += e
+    }
 }
 fmt.Println(numbers2)
-```
+</code></pre>
 
 注意，我把迭代的对象换成了`numbers2`。`numbers2`中的元素值同样是从`1`到`6`的 6 个整数，并且元素类型同样是`int`，但它是一个数组而不是一个切片。
 
@@ -94,17 +93,16 @@ fmt.Println(numbers2)
 
 先来看一段代码。
 
-```
-value1 := [...]int8{0, 1, 2, 3, 4, 5, 6}
+<pre class="language-go"><code class="lang-go">value1 := [...]int8{0, 1, 2, 3, 4, 5, 6}
 switch 1 + 3 {
 case value1[0], value1[1]:
-fmt.Println("0 or 1")
-case value1[2], value1[3]:
-fmt.Println("2 or 3")
+<strong>    fmt.Println("0 or 1")
+</strong>case value1[2], value1[3]:
+    fmt.Println("2 or 3")
 case value1[4], value1[5], value1[6]:
-fmt.Println("4 or 5 or 6")
+    fmt.Println("4 or 5 or 6")
 }
-```
+</code></pre>
 
 我先声明了一个数组类型的变量`value1`，该变量的元素类型是`int8`。在后边的`switch`语句中，被夹在`switch`关键字和左花括号`{`之间的是`1 + 3`，这个位置上的代码被称为`switch`表达式。这个`switch`语句还包含了三个`case`子句，而每个`case`子句又各包含了一个`case`表达式和一条打印语句。
 
@@ -130,15 +128,15 @@ fmt.Println("4 or 5 or 6")
 
 再来看一段很类似的代码：
 
-```
+```go
 value2 := [...]int8{0, 1, 2, 3, 4, 5, 6}
 switch value2[4] {
 case 0, 1:
-fmt.Println("0 or 1")
+    fmt.Println("0 or 1")
 case 2, 3:
-fmt.Println("2 or 3")
+    fmt.Println("2 or 3")
 case 4, 5, 6:
-fmt.Println("4 or 5 or 6")
+    fmt.Println("4 or 5 or 6")
 }
 ```
 
