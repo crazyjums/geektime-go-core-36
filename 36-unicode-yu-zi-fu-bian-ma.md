@@ -1,6 +1,6 @@
 # 36 | unicode与字符编码
 
-<figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 到目前为止，我们已经一起陆陆续续地学完了 Go 语言中那些最重要也最有特色的概念、语法和编程方式。我对于它们非常喜爱，简直可以用如数家珍来形容了。在开始今天的内容之前，我先来做一个简单的总结。
 

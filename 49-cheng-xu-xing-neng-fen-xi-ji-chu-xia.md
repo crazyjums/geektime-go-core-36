@@ -1,6 +1,6 @@
 # 49 | 程序性能分析基础（下）
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 你好，我是郝林，今天我们继续分享程序性能分析基础的内容。
 

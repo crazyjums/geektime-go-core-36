@@ -1,6 +1,6 @@
 # 13 | 结构体及其方法的使用法门
 
-<figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/13.结构体及其方法的使用法门.mp3" %}
 

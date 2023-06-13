@@ -1,6 +1,6 @@
 # 20 | 错误处理 （下）
 
-<figure><img src=".gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/20.错误处理 （下）.mp3" %}
 

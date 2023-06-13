@@ -1,6 +1,6 @@
 # 17 | go语句及其执行规则（下）
 
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/17.go语句及其执行规则（下）.mp3" %}
 
@@ -35,7 +35,7 @@ time.Sleep(time.Millisecond * 500)
 
 你是否想到了通道呢？我们先创建一个通道，它的长度应该与我们手动启用的 goroutine 的数量一致。在每个手动启用的 goroutine 即将运行完毕的时候，我们都要向该通道发送一个值。
 
-注意，这些发送表达式应该被放在它们的`go`函数体的最后面。对应的，我们还需要在`main`函数的最后从通道接收元素值，接收的次数也应该与手动启用的 goroutine 的数量保持一致。关于这些你可以到 demo39.go 文件中，去查看具体的写法。
+注意，这些发送表达式应该被放在它们的`go`函数体的最后面。对应的，我们还需要在`main`函数的最后从通道接收元素值，接收的次数也应该与手动启用的 goroutine 的数量保持一致。关于这些你可以到 [demo39.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article16/q2/demo39.go) 文件中，去查看具体的写法。
 
 其中有一个细节你需要注意。我在声明通道`sign`的时候是以`chan struct{}`作为其类型的。其中的类型字面量`struct{}`有些类似于空接口类型`interface{}`，它代表了既不包含任何字段也不拥有任何方法的空结构体类型。
 
@@ -55,11 +55,11 @@ time.Sleep(time.Millisecond * 500)
 
 首先，我们需要稍微改造一下`for`语句中的那个`go`函数，要让它接受一个`int`类型的参数，并在调用它的时候把变量`i`的值传进去。为了不改动这个`go`函数中的其他代码，我们可以把它的这个参数也命名为`i`。
 
-```
+```go
 for i := 0; i < 10; i++ {
-go func(i int) {
-fmt.Println(i)
-}(i)
+    go func(i int) {
+        fmt.Println(i)
+    }(i)
 }
 ```
 
@@ -69,14 +69,14 @@ fmt.Println(i)
 
 然后，我们在着手改造`for`语句中的`go`函数。
 
-```
+```go
 for i := uint32(0); i < 10; i++ {
-go func(i uint32) {
-fn := func() {
-fmt.Println(i)
-}
-trigger(i, fn)
-}(i)
+    go func(i uint32) {
+        fn := func() {
+            fmt.Println(i)
+        }
+        trigger(i, fn)
+    }(i)
 }
 ```
 
@@ -86,16 +86,16 @@ trigger(i, fn)
 
 再来说`trigger`函数。该函数接受两个参数，一个是`uint32`类型的参数`i`, 另一个是`func()`类型的参数`fn`。你应该记得，`func()`代表的是既无参数声明也无结果声明的函数类型。
 
-```
+```go
 trigger := func(i uint32, fn func()) {
-for {
-if n := atomic.LoadUint32(&count); n == i {
-fn()
-atomic.AddUint32(&count, 1)
-break
-}
-time.Sleep(time.Nanosecond)
-}
+    for {
+        if n := atomic.LoadUint32(&count); n == i {
+            fn()
+            atomic.AddUint32(&count, 1)
+            break
+        }
+        time.Sleep(time.Nanosecond)
+    }
 }
 ```
 
