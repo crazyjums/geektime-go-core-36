@@ -1,6 +1,6 @@
 # 38 | bytes包与字节串操作（上）
 
-<figure><img src=".gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 我相信，经过上一次的学习，你已经对`strings.Builder`和`strings.Reader`这两个类型足够熟悉了。
 

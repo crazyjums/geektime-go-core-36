@@ -29,5 +29,7 @@ description: 郝林  《Go 并发编程实战》作者，前轻松筹大数据�
 5. Go 语言拾遗：这部分将会讲述一些我们使用 Go 语言做软件项目的过程中很可能会遇到的问题，至少会包含两篇文章，是附赠给广大 Go 语言爱好者的。
 
 > 本文档仅供学习使用，如您有条件，可支持作者：[课程链接](https://time.geekbang.org/column/intro/112)
+>
+> 本课程对应的源代码：[https://github.com/crazyjums/go\_haolingeek](https://github.com/crazyjums/go\_haolingeek)
 
 <figure><img src=".gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>

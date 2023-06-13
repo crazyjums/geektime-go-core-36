@@ -12,33 +12,33 @@
 
 如果这个值“不为`nil`”，那么就进入错误处理流程，否则就继续进行正常的流程。下面是一个例子，代码在 demo44.go 文件中。
 
-```
+```go
 package main
 
 import (
-"errors"
-"fmt"
+	"errors"
+	"fmt"
 )
 
 func echo(request string) (response string, err error) {
-if request == "" {
-err = errors.New("empty request")
-return
-}
-response = fmt.Sprintf("echo: %s", request)
-return
+	if request == "" {
+		err = errors.New("empty request")
+		return
+	}
+	response = fmt.Sprintf("echo: %s", request)
+	return
 }
 
 func main() {
-for _, req := range []string{"", "hello!"} {
-fmt.Printf("request: %s\n", req)
-resp, err := echo(req)
-if err != nil {
-fmt.Printf("error: %s\n", err)
-continue
-}
-fmt.Printf("response: %s\n", resp)
-}
+	for _, req := range []string{"", "hello!"} {
+		fmt.Printf("request: %s\n", req)
+		resp, err := echo(req)
+		if err != nil {
+			fmt.Printf("error: %s\n", err)
+			continue
+		}
+		fmt.Printf("response: %s\n", resp)
+	}
 }
 ```
 
@@ -86,19 +86,19 @@ fmt.Printf("response: %s\n", resp)
 
 如果我们得到一个`error`类型值，并且知道该值的实际类型肯定是它们中的某一个，那么就可以用类型`switch`语句去做判断。例如：
 
-```
+```go
 func underlyingError(err error) error {
-switch err := err.(type) {
-case *os.PathError:
-return err.Err
-case *os.LinkError:
-return err.Err
-case *os.SyscallError:
-return err.Err
-case *exec.Error:
-return err.Err
-}
-return err
+	switch err := err.(type) {
+	case *os.PathError:
+		return err.Err
+	case *os.LinkError:
+		return err.Err
+	case *os.SyscallError:
+		return err.Err
+	case *exec.Error:
+		return err.Err
+	}
+	return err
 }
 ```
 
@@ -112,21 +112,21 @@ return err
 
 如果我们在操作文件系统的时候得到了一个错误值，并且知道该值的潜在错误值肯定是上述值中的某一个，那么就可以用普通的`switch`语句去做判断，当然了，用`if`语句和判等操作符也是可以的。例如：
 
-```
+```go
 printError := func(i int, err error) {
-if err == nil {
-fmt.Println("nil error")
-return
-}
-err = underlyingError(err)
-switch err {
-case os.ErrClosed:
-fmt.Printf("error(closed)[%d]: %s\n", i, err)
-case os.ErrInvalid:
-fmt.Printf("error(invalid)[%d]: %s\n", i, err)
-case os.ErrPermission:
-fmt.Printf("error(permission)[%d]: %s\n", i, err)
-}
+	if err == nil {
+		fmt.Println("nil error")
+		return
+	}
+	err = underlyingError(err)
+	switch err {
+	case os.ErrClosed:
+		fmt.Printf("error(closed)[%d]: %s\n", i, err)
+	case os.ErrInvalid:
+		fmt.Printf("error(invalid)[%d]: %s\n", i, err)
+	case os.ErrPermission:
+		fmt.Printf("error(permission)[%d]: %s\n", i, err)
+	}
 }
 ```
 

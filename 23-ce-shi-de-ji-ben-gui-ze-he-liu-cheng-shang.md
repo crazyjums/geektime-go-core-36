@@ -1,6 +1,6 @@
 # 23 | 测试的基本规则和流程 （上）
 
-<figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 #### 【Go 语言代码较多，建议配合文章收听音频。】
 

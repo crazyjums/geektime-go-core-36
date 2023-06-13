@@ -1,6 +1,6 @@
 # 32 | context.Context类型
 
-<figure><img src=".gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 我们在上篇文章中讲到了`sync.WaitGroup`类型：一个可以帮我们实现一对多 goroutine 协作流程的同步工具。
 

@@ -1,6 +1,6 @@
 # 44 | 使用os包中的API （上）
 
-<figure><img src=".gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 我们今天要讲的是`os`代码包中的 API。这个代码包可以让我们拥有操控计算机操作系统的能力。
 
