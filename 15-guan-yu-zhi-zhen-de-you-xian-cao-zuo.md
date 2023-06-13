@@ -1,6 +1,6 @@
 # 15 | 关于指针的有限操作
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 {% file src=".gitbook/assets/15.关于指针的有限操作.mp3" %}
 

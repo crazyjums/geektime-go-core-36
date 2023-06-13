@@ -66,11 +66,29 @@
 
 我们具体来看一道我在面试中经常提问的编程题。
 
-```
-复制代码
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	for i := 0; i < 10; i++ {
+		go func() {
+			fmt.Println(i)
+		}()
+	}
+
+	//time.Sleep(1 * time.Second)
+
+	time.Sleep(time.Millisecond * 500)
+
+}
 ```
 
-在 demo38.go 中，我只在`main`函数中写了一条`for`语句。这条`for`语句中的代码会迭代运行 10 次，并有一个局部变量`i`代表着当次迭代的序号，该序号是从`0`开始的。
+在 [demo38.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article16/q1/demo38.go) 中，我只在`main`函数中写了一条`for`语句。这条`for`语句中的代码会迭代运行 10 次，并有一个局部变量`i`代表着当次迭代的序号，该序号是从`0`开始的。
 
 在这条`for`语句中仅有一条`go`语句，这条`go`语句中也仅有一条语句。这条最里面的语句调用了`fmt.Println`函数并想要打印出变量`i`的值。
 
@@ -100,7 +118,7 @@
 
 这里“后边的语句”指的一般是`for`语句中的下一个迭代。然而，当最后一个迭代运行的时候，这个“后边的语句”是不存在的。
 
-在 demo38.go 中的那条`for`语句会以很快的速度执行完毕。当它执行完毕时，那 10 个包装了`go`函数的 goroutine 往往还没有获得运行的机会。
+在 [demo38.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article16/q1/demo38.go) 中的那条`for`语句会以很快的速度执行完毕。当它执行完毕时，那 10 个包装了`go`函数的 goroutine 往往还没有获得运行的机会。
 
 请注意，`go`函数中的那个对`fmt.Println`函数的调用是以`for`语句中的变量`i`作为参数的。你可以想象一下，如果当`for`语句执行完毕的时候，这些`go`函数都还没有执行，那么它们引用的变量`i`的值将会是什么？
 
@@ -116,7 +134,7 @@
 
 所以哪个 goroutine 先执行完、哪个 goroutine 后执行完往往是不可预知的，除非我们使用了某种 Go 语言提供的方式进行了人为干预。然而，在这段代码中，我们并没有进行任何人为干预。
 
-那答案到底是什么呢？就 demo38.go 中如此简单的代码而言，绝大多数情况都会是“不会有任何内容被打印出来”。
+那答案到底是什么呢？就 [demo38.go](https://github.com/crazyjums/go\_haolingeek/blob/master/article16/q1/demo38.go) 中如此简单的代码而言，绝大多数情况都会是“不会有任何内容被打印出来”。
 
 但是为了严谨起见，无论应聘者的回答是“打印出 10 个`10`”还是“不会有任何内容被打印出来”，又或是“打印出乱序的`0`到`9`”，我都会紧接着去追问“为什么？”因为只有你知道了这背后的原理，你做出的回答才会被认为是正确的。
 
